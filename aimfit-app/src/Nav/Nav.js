@@ -5,8 +5,8 @@ export default class Nav extends Component {
   render() {
     return (
       <>
-        <Link to='/'>Login</Link>
-        <Link to='/exercises'>Exercises</Link>
+        <Link to='/'>Login </Link>&nbsp;
+        <Link to='/exercises'>Exercises</Link>&nbsp;
         <Link to='/workouts'>Workouts</Link>
       </>
     )

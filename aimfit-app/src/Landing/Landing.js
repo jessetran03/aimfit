@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Landing extends Component {
   render() {
@@ -21,7 +22,10 @@ export default class Landing extends Component {
               <input />
                 <br />
                   <button>Log in</button>
-                  <button>Forgot password?</button>
+                  <Link to='/register'>
+                    <button>Register</button>
+                  </Link>
+                  
     </section>
       </>
     )
