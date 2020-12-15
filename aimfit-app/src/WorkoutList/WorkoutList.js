@@ -1,70 +1,156 @@
 import React, { Component } from 'react'
 import './WorkoutList.css'
 import Workout from '../Workout/Workout'
-import STORE from '../STORE'
+import config from '../config'
 
 export default class WorkoutList extends Component {
   state = {
-    store: STORE,
+    workouts: [],
   }
 
-  handleAddWorkout = () => {
+  componentDidMount() {
+    this.getData()
+  }
 
-    const workoutList = this.state.store.workouts
+  getData = () => {
+    Promise.all([
+      fetch(`${config.API_ENDPOINT}/workouts`)
+    ])
+      .then(([workoutsRes]) => {
+        if (!workoutsRes.ok)
+          return workoutsRes.json().then(e => Promise.reject(e))
+
+        return Promise.all([
+          workoutsRes.json(),
+        ])
+      })
+      .then(([workouts]) => {
+        this.setState({ workouts })
+      })
+      .catch(error => {
+        console.error({ error })
+      })
+  }
+
+  handleAddWorkout = e => {
+    e.preventDefault()
     const newWorkout = {
-      id: '11',
-      title: 'New Workout',
-      exerciseIds: ['1'],
+      title: e.target['workout-name'].value,
+      day: e.target['workout-day'].value,
     }
-
-    workoutList.push(newWorkout)
-
-    this.setState({
-      store: {
-        workouts: workoutList
-      }
+    fetch(`${config.API_ENDPOINT}/workouts`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newWorkout),
     })
-
+      .then(res => {
+        if (!res.ok)
+          return res.json().then(e => Promise.reject(e))
+        return res.json()
+      })
+      .then(workout => {
+        this.getData()
+      })
+      .catch(error => {
+        console.error({ error })
+      })
   };
 
+  /*handleSubmit = e => {
+    e.preventDefault()
+    const newNote = {
+      notename: e.target['note-name'].value,
+      content: e.target['note-content'].value,
+      folder_id: e.target['note-folder-id'].value,
+      date_modified: new Date(),
+    }
+    fetch(`${config.API_ENDPOINT}/notes`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newNote),
+    })
+      .then(res => {
+        if (!res.ok)
+          return res.json().then(e => Promise.reject(e))
+        return res.json()
+      })
+      .then(note => {
+        this.context.addNote(note)
+        this.props.history.push(`/folder/${note.folder_id}`)
+      })
+      .catch(error => {
+        console.error({ error })
+      })
+  }*/
+
   render() {
-    const { store } = this.state;
+    const workouts = this.state.workouts;
     return (
       <>
-        <section className="exercises">
+        <section className="workouts">
           <h2>Workout List</h2>
           <ul>
-            {store.workouts.map(workout => (
+            {workouts.map(workout => (
               <li
                 key={workout.id}
               >
                 <Workout
                   id={workout.id}
                   title={workout.title}
+                  day={workout.day}
+                  getData={this.getData}
                 />
               </li>
             ))}
           </ul>
-          <button
-            type="button"
-            className="List-add-button"
-            onClick={() => this.handleAddWorkout()}
-          >
-            + Add Workout
-          </button>
+          <form onSubmit={this.handleAddWorkout}>
+            <label htmlFor='workout-name-input'>
+              Name of workout: &nbsp;
+            </label>
+            <input type='text' id='workout-name-input' name='workout-name' />
+            <br />
+            <label htmlFor='workout-day-input'>
+              Day of week: &nbsp;
+            </label>
+            <select id='workout-day-select' name='workout-day'>
+              <option value='Sunday'>Sunday</option>
+              <option value='Monday'>Monday</option>
+              <option value='Tuesday'>Tuesday</option>
+              <option value='Wednesday'>Wednesday</option>
+              <option value='Thursday'>Thursday</option>
+              <option value='Friday'>Friday</option>
+              <option value='Saturday'>Saturday</option>
+            </select>
+            <br />
+            <button
+              type="submit"
+              className="List-add-button"
+            >
+              + Add Workout
+            </button>
+          </form>
+
         </section>
       </>
     )
   }
 }
 
-/*const { folderId } = this.props.match.params
-const { notes = [] } = this.context
-const notesForFolder = getNotesForFolder(notes, folderId)
-
-export const getNotesForFolder = (notes = [], folderId) => (
-  (!folderId)
-    ? notes
-    : notes.filter(note => note.folder_id === parseInt(folderId))
-)
-*/
+/*<NotefulForm onSubmit={this.handleSubmit}>
+          <div className='field'>
+            <label htmlFor='folder-name-input'>
+              Name
+            </label>
+            <input type='text' id='folder-name-input' name='folder-name' />
+          </div>
+          <div className='buttons'>
+            <button type='submit'>
+              Add folder
+            </button>
+          </div>
+        </NotefulForm>
+        */

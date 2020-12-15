@@ -14,6 +14,14 @@ export default class WorkoutExerciseList extends Component {
     }
   }
 
+  handleClickAdd = () => {
+
+  }
+
+  handleClickBack = () => {
+    this.props.history.goBack()
+  };
+
   render() {
 
     const { workoutId } = this.props.match.params
@@ -28,6 +36,11 @@ export default class WorkoutExerciseList extends Component {
     return (
       <>
         <section className='exercises'>
+          <button
+            onClick={this.handleClickBack}
+          >
+            Back
+          </button>
           <h2>{workoutName}</h2>
           <ul>
             {exercisesForWorkouts.map(exercise => (
@@ -41,6 +54,11 @@ export default class WorkoutExerciseList extends Component {
               </li>
             ))}
           </ul>
+          <button
+            onClick={this.handleClickAdd}
+          >
+            +Add Exercise
+          </button>
         </section>
       </>
     )

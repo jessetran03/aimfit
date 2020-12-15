@@ -22,6 +22,11 @@ const STORE = {
         name: 'Dumbbell Overhead extension',
         muscleGroups: ['Triceps'],
       },
+      {
+        id: 5,
+        name: 'Row Machine',
+        workoutId: 1
+      }
 
     ],
     workouts: [
@@ -29,21 +34,25 @@ const STORE = {
         id: 1,
         title: 'Cardio Workout',
         exerciseIds: [ 1, 2 ],
+        day: 'Monday',
       },
       {
         id: 2,
         title: 'Push Workout',
         exercises: ['Bench Press', 'Squat'],
+        day: 'Tuesday',
       },
       {
         id: 3,
         title: 'Pull Workout',
         exercises: ['Bench Press', 'Squat'],
+        day: 'Wednesday',
       },
       {
         id: 4,
         title: 'Legs Workout',
         exercises: ['Bench Press', 'Squat'],
+        day: 'Thursday',
       },
     ],
     workoutLog: [

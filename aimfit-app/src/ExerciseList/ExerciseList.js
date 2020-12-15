@@ -1,24 +1,47 @@
 import React, { Component } from 'react'
 import './ExerciseList.css'
-import STORE from '../STORE'
+import config from '../config'
 
 export default class ExerciseList extends Component {
   state = {
-    store: STORE,
+    exercises: [],
+  }
+
+  componentDidMount() {
+    this.getData()
+  }
+
+  getData = () => {
+    Promise.all([
+      fetch(`${config.API_ENDPOINT}/exercises`)
+    ])
+      .then(([exercisesRes]) => {
+        if (!exercisesRes.ok)
+          return exercisesRes.json().then(e => Promise.reject(e))
+
+        return Promise.all([
+          exercisesRes.json(),
+        ])
+      })
+      .then(([exercises]) => {
+        this.setState({ exercises })
+      })
+      .catch(error => {
+        console.error({ error })
+      })
   }
 
   render() {
-    const { store } = this.state;
-    /*const exercisesForWorkouts = (notes=[], workoutId)*/
+    const exercises = this.state.exercises;
     return (
       <>
         <section className='exercises'>
-          <h2>Chest exercises</h2>
+          <h2>All Exercises</h2>
           <ul>
-            {store.exercises.map(exercise => (
-              <li
-                key={exercise.id}
-              >{exercise.name}</li>
+            {exercises.map(exercise => (
+              <li key={exercise.id}>
+                {exercise.exercise_name}
+              </li>
             ))}
           </ul>
         </section>
@@ -26,8 +49,3 @@ export default class ExerciseList extends Component {
     )
   }
 }
-
-/*export const getNotesForFolder = (notes=[], folderId) => (
-  (!folderId)
-    ? notes
-    : notes.filter(note => note.folder_id === parseInt(folderId))*/
