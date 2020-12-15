@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import './ExerciseList.css'
 import config from '../config'
+import STORE from '../STORE';
 
 export default class ExerciseList extends Component {
   state = {
+    store: STORE,
+  }
+  /*state = {
     exercises: [],
   }
 
@@ -29,10 +33,10 @@ export default class ExerciseList extends Component {
       .catch(error => {
         console.error({ error })
       })
-  }
+  }*/
 
   render() {
-    const exercises = this.state.exercises;
+    const exercises = this.state.store.exercises;
     return (
       <>
         <section className='exercises'>
@@ -40,7 +44,17 @@ export default class ExerciseList extends Component {
           <ul>
             {exercises.map(exercise => (
               <li key={exercise.id}>
-                {exercise.exercise_name}
+                <h3>{exercise.exercise_name}</h3>
+                <br />
+                <select>
+                  <option>Select...</option>
+                  <option>Push workout</option>
+                  <option>Pull workout</option>
+                </select>
+                &nbsp;
+                <button>
+                  Add to workout
+                </button>
               </li>
             ))}
           </ul>

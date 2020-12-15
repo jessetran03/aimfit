@@ -2,29 +2,29 @@ const STORE = {
     exercises: [
       {
         id: 1,
-        name: 'Bench Press',
+        exercise_name: 'Bench Press',
         muscleGroups: [ 'Chest', 'Triceps' ],
         workoutId: 2,
       },
       {
         id: 2,
-        name: 'Squat',
+        exercise_name: 'Squat',
         muscleGroups: ['Quads', 'Hamstrings', 'Glutes'],
       },
       {
         id: 3,
-        name: 'Cable Fly',
+        exercise_name: 'Cable Fly',
         muscleGroups: ['Chest'],
         workoutId: 2,
       },
       {
         id: 4,
-        name: 'Dumbbell Overhead extension',
+        exercise_name: 'Dumbbell Overhead extension',
         muscleGroups: ['Triceps'],
       },
       {
         id: 5,
-        name: 'Row Machine',
+        exercise_name: 'Row Machine',
         workoutId: 1
       }
 

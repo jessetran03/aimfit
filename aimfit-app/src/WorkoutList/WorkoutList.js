@@ -2,9 +2,13 @@ import React, { Component } from 'react'
 import './WorkoutList.css'
 import Workout from '../Workout/Workout'
 import config from '../config'
+import STORE from '../STORE'
 
 export default class WorkoutList extends Component {
   state = {
+    store: STORE,
+  }
+  /*state = {
     workouts: [],
   }
 
@@ -56,39 +60,11 @@ export default class WorkoutList extends Component {
       .catch(error => {
         console.error({ error })
       })
-  };
-
-  /*handleSubmit = e => {
-    e.preventDefault()
-    const newNote = {
-      notename: e.target['note-name'].value,
-      content: e.target['note-content'].value,
-      folder_id: e.target['note-folder-id'].value,
-      date_modified: new Date(),
-    }
-    fetch(`${config.API_ENDPOINT}/notes`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(newNote),
-    })
-      .then(res => {
-        if (!res.ok)
-          return res.json().then(e => Promise.reject(e))
-        return res.json()
-      })
-      .then(note => {
-        this.context.addNote(note)
-        this.props.history.push(`/folder/${note.folder_id}`)
-      })
-      .catch(error => {
-        console.error({ error })
-      })
-  }*/
+  };*/
 
   render() {
-    const workouts = this.state.workouts;
+    //const workouts = this.state.workouts;
+    const workouts = this.state.store.workouts;
     return (
       <>
         <section className="workouts">

@@ -49,7 +49,7 @@ export default class WorkoutExerciseList extends Component {
               >
                 <WorkoutExercise
                   id={exercise.id}
-                  name={exercise.name}
+                  name={exercise.exercise_name}
                 />
               </li>
             ))}
