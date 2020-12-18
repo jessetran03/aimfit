@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import './ExerciseList.css'
+import './AddExerciseList.css'
+import Exercise from './Exercise'
 import config from '../config'
-export default class ExerciseList extends Component {
+
+export default class AddExerciseList extends Component {
   state = {
     exercises: [],
   }
@@ -30,27 +32,31 @@ export default class ExerciseList extends Component {
       })
   }
 
+  handleGoBack = () => {
+    this.props.history.goBack()
+  };
+
   render() {
     const exercises = this.state.exercises;
+    const workoutId = this.props.match.params.workoutId
     return (
       <>
         <section className='exercises'>
-          <h2>All Exercises</h2>
+          <h2>Add Exercise</h2>
+          <button
+            onClick={this.handleGoBack}
+          >
+            Back
+          </button>
           <ul>
             {exercises.map(exercise => (
-              <li key={exercise.id}>
-                <h3>{exercise.exercise_name}</h3>
-                <br />
-                <select>
-                  <option>Select...</option>
-                  <option>Push workout</option>
-                  <option>Pull workout</option>
-                </select>
-                &nbsp;
-                <button>
-                  Add to workout
-                </button>
-              </li>
+              <Exercise
+                key={exercise.id}
+                id={exercise.id}
+                name={exercise.exercise_name}
+                workoutId={workoutId}
+                handleGoBack={this.handleGoBack}
+              />
             ))}
           </ul>
         </section>

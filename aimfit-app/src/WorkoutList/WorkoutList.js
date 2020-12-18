@@ -2,13 +2,9 @@ import React, { Component } from 'react'
 import './WorkoutList.css'
 import Workout from '../Workout/Workout'
 import config from '../config'
-import STORE from '../STORE'
 
 export default class WorkoutList extends Component {
   state = {
-    store: STORE,
-  }
-  /*state = {
     workouts: [],
   }
 
@@ -60,11 +56,10 @@ export default class WorkoutList extends Component {
       .catch(error => {
         console.error({ error })
       })
-  };*/
+  };
 
   render() {
-    //const workouts = this.state.workouts;
-    const workouts = this.state.store.workouts;
+    const workouts = this.state.workouts;
     return (
       <>
         <section className="workouts">

@@ -20,9 +20,6 @@ export default class Workout extends Component {
     })
       .then(() => {
         this.props.getData()
-        if (this.props.history) {
-          this.props.history.push('/')
-        }
       })
       .catch(error => {
         console.error({ error})

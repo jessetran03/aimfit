@@ -6,6 +6,7 @@ import ExerciseList from '../ExerciseList/ExerciseList'
 import Exercise from '../Exercise/Exercise'
 import WorkoutList from '../WorkoutList/WorkoutList'
 import WorkoutExerciseList from '../WorkoutExerciseList/WorkoutExerciseList'
+import AddExerciseList from '../AddExerciseList/AddExerciseList'
 import MuscleNav from '../MuscleNav/MuscleNav'
 import Nav from '../Nav/Nav'
 
@@ -35,9 +36,17 @@ class App extends Component {
         />
         {['/workouts/:workoutId'].map(path =>
         <Route
+          exact
           key={path}
           path={path}
           component={WorkoutExerciseList}
+        />
+        )}
+        {['/workouts/:workoutId/exercises'].map(path =>
+        <Route
+          key={path}
+          path={path}
+          component={AddExerciseList}
         />
         )}
         <Route
