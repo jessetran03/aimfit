@@ -1,24 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import App from './App'
+import Nav from './Nav'
 import renderer from 'react-test-renderer'
 
-it('renders App without crashing', () => {
+it('renders Nav without crashing', () => {
   const div = document.createElement('div')
   ReactDOM.render(
     <BrowserRouter>
-      <App />
+      <Nav />
     </BrowserRouter>,
     div
   )
   ReactDOM.unmountComponentAtNode(div)
 })
 
-it('render App without data', () => {
+it('render Nav without data', () => {
   const wrapper = renderer.create(
     <BrowserRouter>
-      <App />
+      <Nav />
     </BrowserRouter>
   )
     .toJSON();

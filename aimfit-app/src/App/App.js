@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
-import Landing from '../Landing/Landing'
+import { Route, Link } from 'react-router-dom'
+import Login from '../Login/Login'
 import Register from '../Register/Register'
 import ExerciseList from '../ExerciseList/ExerciseList'
 import Exercise from '../Exercise/Exercise'
@@ -9,6 +9,7 @@ import WorkoutExerciseList from '../WorkoutExerciseList/WorkoutExerciseList'
 import AddExerciseList from '../AddExerciseList/AddExerciseList'
 import MuscleNav from '../MuscleNav/MuscleNav'
 import Nav from '../Nav/Nav'
+import Landing from '../Landing/Landing'
 
 class App extends Component {
   state = {}
@@ -20,6 +21,11 @@ class App extends Component {
           exact
           path='/'
           component={Landing}
+        />
+        <Route
+          exact
+          path='/login'
+          component={Login}
         />
         <Route
           path='/register'
@@ -78,7 +84,9 @@ class App extends Component {
         />
         </nav>
         <header>
-          <h1>AimFit</h1>
+          <Link to="/">
+            <h1>AimFit</h1>
+          </Link>
         </header>
         <main>
           {this.renderCategoryRoutes()}

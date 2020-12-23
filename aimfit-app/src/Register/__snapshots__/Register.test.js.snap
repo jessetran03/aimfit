@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Register without data 1`] = `
+Array [
+  <section
+    className="muscle-group"
+  >
+    <h2>
+      Strive to be great. Aim to be fit.
+    </h2>
+  </section>,
+  <form
+    className="exercises"
+    onSubmit={[Function]}
+  >
+    <h2>
+      Register
+    </h2>
+    <div
+      role="alert"
+    />
+    <label
+      htmlFor="full-name-input"
+    >
+      Full name:
+    </label>
+    <input
+      id="full-name-input"
+      name="full-name"
+      type="text"
+    />
+    <br />
+    <label
+      htmlFor="username-input"
+    >
+      Username:
+    </label>
+    <input
+      id="username-input"
+      name="username"
+      type="text"
+    />
+    <br />
+    <br />
+    <label
+      htmlFor="password-input"
+    >
+      Password:
+    </label>
+    <input
+      id="password-input"
+      name="password"
+      type="text"
+    />
+    <br />
+    <button
+      type="submit"
+    >
+      Create account
+    </button>
+  </form>,
+]
+`;

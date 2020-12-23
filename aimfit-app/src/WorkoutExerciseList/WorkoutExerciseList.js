@@ -3,6 +3,7 @@ import './WorkoutExerciseList.css'
 import { Link } from 'react-router-dom'
 import config from '../config'
 import WorkoutExercise from '../WorkoutExercise/WorkoutExercise'
+import TokenService from '../services/token-service'
 
 export default class WorkoutExerciseList extends Component {
   state = {
@@ -12,6 +13,9 @@ export default class WorkoutExerciseList extends Component {
   static defaultProps = {
     match: {
       params: {}
+    },
+    location: {
+      pathname: {}
     }
   }
 
@@ -19,7 +23,6 @@ export default class WorkoutExerciseList extends Component {
     this.getWorkoutExercises()
     this.getWorkout()
   }
-
 
   getWorkout = () => {
     const { workoutId } = this.props.match.params
@@ -39,7 +42,12 @@ export default class WorkoutExerciseList extends Component {
 
   getWorkoutExercises = () => {
     const { workoutId } = this.props.match.params
-    return fetch(`${config.API_ENDPOINT}/workouts/${workoutId}/exercises`)
+    return fetch(`${config.API_ENDPOINT}/workouts/${workoutId}/exercises`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      }
+    })
       .then(res =>
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
@@ -51,10 +59,6 @@ export default class WorkoutExerciseList extends Component {
       .catch(error => {
         console.error({ error })
       })
-  }
-
-  handleClickAdd = () => {
-
   }
 
   handleClickBack = () => {

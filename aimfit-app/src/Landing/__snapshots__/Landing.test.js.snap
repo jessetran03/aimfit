@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Landing without data 1`] = `
+Array [
+  <h2>
+    Welcome
+  </h2>,
+  <div>
+    Get started!
+  </div>,
+  <div>
+    Log in 
+    <a
+      href="/login"
+      onClick={[Function]}
+    >
+      here
+    </a>
+    !
+  </div>,
+]
+`;

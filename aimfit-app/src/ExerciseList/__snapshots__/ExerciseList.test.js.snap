@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render ExerciseList without data 1`] = `
+<section
+  className="exercises"
+>
+  <h2>
+    All Exercises
+  </h2>
+  <ul />
+</section>
+`;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import config from '../config'
+import TokenService from '../services/token-service'
 
 export default class Exercise extends Component {
   static defaultProps = {
@@ -14,7 +15,8 @@ export default class Exercise extends Component {
     fetch(`${config.API_ENDPOINT}/workout_exercises`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify(newWorkoutExercise),
     })

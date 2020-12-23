@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import './AddExerciseList.css'
 import Exercise from './Exercise'
 import config from '../config'
+import MuscleNav from '../MuscleNav/MuscleNav'
 
 export default class AddExerciseList extends Component {
   state = {
     exercises: [],
+    muscle_group: 'chest'
   }
 
   componentDidMount() {
@@ -41,6 +43,9 @@ export default class AddExerciseList extends Component {
     const workoutId = this.props.match.params.workoutId
     return (
       <>
+        <nav>
+          <MuscleNav />
+        </nav>
         <section className='exercises'>
           <h2>Add Exercise</h2>
           <button

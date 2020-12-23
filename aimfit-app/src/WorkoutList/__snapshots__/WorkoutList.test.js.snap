@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render WorkoutList without data 1`] = `
+<section
+  className="workouts"
+>
+  <h2>
+    Workout List
+  </h2>
+  <ul />
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="workout-name-input"
+    >
+      Name of workout:  
+    </label>
+    <input
+      id="workout-name-input"
+      name="workout-name"
+      type="text"
+    />
+    <br />
+    <label
+      htmlFor="workout-day-input"
+    >
+      Day of week:  
+    </label>
+    <select
+      id="workout-day-select"
+      name="workout-day"
+    >
+      <option
+        value="Sunday"
+      >
+        Sunday
+      </option>
+      <option
+        value="Monday"
+      >
+        Monday
+      </option>
+      <option
+        value="Tuesday"
+      >
+        Tuesday
+      </option>
+      <option
+        value="Wednesday"
+      >
+        Wednesday
+      </option>
+      <option
+        value="Thursday"
+      >
+        Thursday
+      </option>
+      <option
+        value="Friday"
+      >
+        Friday
+      </option>
+      <option
+        value="Saturday"
+      >
+        Saturday
+      </option>
+    </select>
+    <br />
+    <button
+      className="List-add-button"
+      type="submit"
+    >
+      + Add Workout
+    </button>
+  </form>
+</section>
+`;

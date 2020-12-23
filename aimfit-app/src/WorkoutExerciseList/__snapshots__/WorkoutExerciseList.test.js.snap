@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render WorkoutExerciseList without data 1`] = `
+<section
+  className="exercises"
+>
+  <button
+    onClick={[Function]}
+  >
+    Back
+  </button>
+  <h2 />
+  <ul />
+  <a
+    href="/[object Object]/exercises"
+    onClick={[Function]}
+  >
+    <button>
+      +Add Exercise
+    </button>
+  </a>
+</section>
+`;

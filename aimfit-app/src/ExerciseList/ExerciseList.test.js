@@ -1,24 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import App from './App'
+import ExerciseList from './ExerciseList'
 import renderer from 'react-test-renderer'
 
-it('renders App without crashing', () => {
+it('renders ExerciseList without crashing', () => {
   const div = document.createElement('div')
   ReactDOM.render(
     <BrowserRouter>
-      <App />
+      <ExerciseList />
     </BrowserRouter>,
     div
   )
   ReactDOM.unmountComponentAtNode(div)
 })
 
-it('render App without data', () => {
+it('render ExerciseList without data', () => {
   const wrapper = renderer.create(
     <BrowserRouter>
-      <App />
+      <ExerciseList />
     </BrowserRouter>
   )
     .toJSON();

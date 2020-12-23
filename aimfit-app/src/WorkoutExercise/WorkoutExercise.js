@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import './WorkoutExercise.css'
 import config from '../config'
+import PropTypes from 'prop-types'
 
 export default class WorkoutExercise extends Component {
   static defaultProps = {
-    onDeleteWorkout: () => {},
+    getWorkoutExercises: () => {},
+  }
+  static propTypes = {
+    getWorkoutExercise: PropTypes.func,
+    id: PropTypes.number,
+    name: PropTypes.string
   }
 
   handleClickDelete = e => {

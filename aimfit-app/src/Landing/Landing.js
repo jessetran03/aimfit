@@ -1,32 +1,29 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import TokenService from '../services/token-service'
 
 export default class Landing extends Component {
+
+  renderLoggedOut() {
+    return(
+      <div>Log in <Link to="/login">here</Link>!</div>
+    )
+  }
+
+  renderLoggedIn() {
+    return(
+      <div><Link to="/workouts">Get started!</Link></div>
+    )
+  }
+
   render() {
     return (
       <>
-        <section className="muscle-group">
-          <h2>Strive to be great. Aim to be fit.</h2>
-        </section>
-        <section className="exercises">
-          <form>
-            <h2>Get started.</h2>
-          </form>
-        </section>
-        <section className="exercises">
-          <h2>Sign in</h2>
-          <label>Username:</label>
-          <input />
-            <br />
-              <label>Password:</label>
-              <input />
-                <br />
-                  <button>Log in</button>
-                  <Link to='/register'>
-                    <button>Register</button>
-                  </Link>
-                  
-    </section>
+        <h2>Welcome</h2>
+        <div>Get started!</div>
+        {TokenService.hasAuthToken()
+          ? this.renderLoggedIn()
+          : this.renderLoggedOut()}
       </>
     )
   }

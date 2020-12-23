@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './WorkoutList.css'
 import Workout from '../Workout/Workout'
 import config from '../config'
+import TokenService from '../services/token-service'
 
 export default class WorkoutList extends Component {
   state = {
@@ -13,18 +14,18 @@ export default class WorkoutList extends Component {
   }
 
   getData = () => {
-    Promise.all([
-      fetch(`${config.API_ENDPOINT}/workouts`)
-    ])
-      .then(([workoutsRes]) => {
-        if (!workoutsRes.ok)
-          return workoutsRes.json().then(e => Promise.reject(e))
-
-        return Promise.all([
-          workoutsRes.json(),
-        ])
-      })
-      .then(([workouts]) => {
+    return fetch(`${config.API_ENDPOINT}/workouts`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      }
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+      .then((workouts) => {
         this.setState({ workouts })
       })
       .catch(error => {
@@ -41,7 +42,8 @@ export default class WorkoutList extends Component {
     fetch(`${config.API_ENDPOINT}/workouts`, {
       method: 'POST',
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify(newWorkout),
     })
@@ -110,18 +112,3 @@ export default class WorkoutList extends Component {
     )
   }
 }
-
-/*<NotefulForm onSubmit={this.handleSubmit}>
-          <div className='field'>
-            <label htmlFor='folder-name-input'>
-              Name
-            </label>
-            <input type='text' id='folder-name-input' name='folder-name' />
-          </div>
-          <div className='buttons'>
-            <button type='submit'>
-              Add folder
-            </button>
-          </div>
-        </NotefulForm>
-        */

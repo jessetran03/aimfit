@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render App without data 1`] = `
+Array [
+  <nav>
+    <a
+      href="/login"
+      onClick={[Function]}
+    >
+      Login
+    </a>
+     
+    <a
+      href="/register"
+      onClick={[Function]}
+    >
+      Register
+    </a>
+  </nav>,
+  <header>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <h1>
+        AimFit
+      </h1>
+    </a>
+  </header>,
+  <main>
+    <h2>
+      Welcome
+    </h2>
+    <div>
+      Get started!
+    </div>
+    <div>
+      Log in 
+      <a
+        href="/login"
+        onClick={[Function]}
+      >
+        here
+      </a>
+      !
+    </div>
+  </main>,
+]
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Nav without data 1`] = `
+Array [
+  <a
+    href="/login"
+    onClick={[Function]}
+  >
+    Login
+  </a>,
+  " ",
+  <a
+    href="/register"
+    onClick={[Function]}
+  >
+    Register
+  </a>,
+]
+`;

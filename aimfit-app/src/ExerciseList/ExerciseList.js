@@ -4,6 +4,7 @@ import config from '../config'
 export default class ExerciseList extends Component {
   state = {
     exercises: [],
+    muscle: 'Chest',
   }
 
   componentDidMount() {
@@ -11,18 +12,18 @@ export default class ExerciseList extends Component {
   }
 
   getData = () => {
-    Promise.all([
-      fetch(`${config.API_ENDPOINT}/exercises`)
-    ])
-      .then(([exercisesRes]) => {
-        if (!exercisesRes.ok)
-          return exercisesRes.json().then(e => Promise.reject(e))
-
-        return Promise.all([
-          exercisesRes.json(),
-        ])
-      })
-      .then(([exercises]) => {
+    return fetch(`${config.API_ENDPOINT}/exercises?muscle=Chest`, {
+      method: 'GET',
+      params: {
+        "muscle": "Chest"
+      },
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+      .then((exercises) => {
         this.setState({ exercises })
       })
       .catch(error => {
