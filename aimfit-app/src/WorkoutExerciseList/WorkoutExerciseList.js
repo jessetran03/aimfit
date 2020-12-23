@@ -15,11 +15,11 @@ export default class WorkoutExerciseList extends Component {
     match: { params: {} },
     location: { pathname: {} }
   }
-  static propTypes = {
-    match: { params: PropTypes.string },
-    location: { pathname: PropTypes.string },
-    history: { goBack: PropTypes.func }
-  }
+  /*static propTypes = {
+    match: { params: PropTypes.object },
+    location: { pathname: PropTypes.object },
+    history: { goBack: PropTypes.object }
+  }*/
 
   componentDidMount() {
     this.getWorkoutExercises()
@@ -28,7 +28,12 @@ export default class WorkoutExerciseList extends Component {
 
   getWorkout = () => {
     const { workoutId } = this.props.match.params
-    return fetch(`${config.API_ENDPOINT}/workouts/${workoutId}`)
+    return fetch(`${config.API_ENDPOINT}/workouts/${workoutId}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      }
+    })
       .then(res =>
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))

@@ -63,7 +63,7 @@ class App extends Component {
     )
   }
 
-  renderCategoryRoutes() {
+  /*renderCategoryRoutes() {
     return (
       <>
         <Route
@@ -72,7 +72,7 @@ class App extends Component {
         />
       </>
     )
-  }
+  }*/
 
   render() {
     return (
@@ -89,7 +89,6 @@ class App extends Component {
           </Link>
         </header>
         <main>
-          {this.renderCategoryRoutes()}
           {this.renderMainRoutes()}
         </main>
       </>

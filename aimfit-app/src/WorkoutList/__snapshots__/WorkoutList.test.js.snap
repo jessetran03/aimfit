@@ -19,6 +19,7 @@ exports[`render WorkoutList without data 1`] = `
     <input
       id="workout-name-input"
       name="workout-name"
+      required={true}
       type="text"
     />
     <br />

@@ -12,7 +12,7 @@ export default class Landing extends Component {
 
   renderLoggedIn() {
     return(
-      <div><Link to="/workouts">Get started!</Link></div>
+      <div><Link to="/workouts">Go to your workouts!</Link></div>
     )
   }
 

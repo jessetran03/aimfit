@@ -9,8 +9,8 @@ export default class Login extends Component {
     error: null
   }
   static propTypes = {
-    location: PropTypes.string,
-    history: PropTypes.string
+    location: PropTypes.object,
+    history: PropTypes.object
   }
 
   handleLoginSuccess = () => {
@@ -73,7 +73,7 @@ export default class Login extends Component {
           <label htmlFor='password-input'>
             Password:
           </label>
-          <input type='text' id='password-input' name='password' />
+          <input type='password' id='password-input' name='password' />
           <br />
           <button
             type='submit'
