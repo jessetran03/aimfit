@@ -2,10 +2,15 @@ import React, { Component } from 'react'
 import TokenService from '../services/token-service'
 import { Link } from 'react-router-dom'
 import config from '../config'
+import PropTypes from 'prop-types'
 
 export default class Login extends Component {
   state = {
     error: null
+  }
+  static propTypes = {
+    location: PropTypes.string,
+    history: PropTypes.string
   }
 
   handleLoginSuccess = () => {

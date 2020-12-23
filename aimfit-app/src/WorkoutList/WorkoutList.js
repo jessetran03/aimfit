@@ -84,7 +84,7 @@ export default class WorkoutList extends Component {
             <label htmlFor='workout-name-input'>
               Name of workout: &nbsp;
             </label>
-            <input type='text' id='workout-name-input' name='workout-name' />
+            <input type='text' id='workout-name-input' name='workout-name' required />
             <br />
             <label htmlFor='workout-day-input'>
               Day of week: &nbsp;

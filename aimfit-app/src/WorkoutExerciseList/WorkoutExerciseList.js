@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import config from '../config'
 import WorkoutExercise from '../WorkoutExercise/WorkoutExercise'
 import TokenService from '../services/token-service'
+import PropTypes from 'prop-types'
 
 export default class WorkoutExerciseList extends Component {
   state = {
@@ -11,12 +12,13 @@ export default class WorkoutExerciseList extends Component {
     workout: {},
   }
   static defaultProps = {
-    match: {
-      params: {}
-    },
-    location: {
-      pathname: {}
-    }
+    match: { params: {} },
+    location: { pathname: {} }
+  }
+  static propTypes = {
+    match: { params: PropTypes.string },
+    location: { pathname: PropTypes.string },
+    history: { goBack: PropTypes.func }
   }
 
   componentDidMount() {

@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import config from '../config'
+import PropTypes from 'prop-types'
 
 export default class Register extends Component {
-
   state = {
     error: null
+  }
+  static propTypes = {
+    location: PropTypes.string,
+    history: PropTypes.string
   }
 
   handleRegisterSuccess = () => {
