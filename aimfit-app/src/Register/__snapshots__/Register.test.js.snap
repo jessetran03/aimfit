@@ -50,7 +50,7 @@ Array [
     <input
       id="password-input"
       name="password"
-      type="text"
+      type="password"
     />
     <br />
     <button
