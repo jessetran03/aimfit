@@ -4,6 +4,7 @@ import config from '../config'
 export default class ExerciseList extends Component {
   state = {
     exercises: [],
+    muscle: '',
   }
 
   componentDidMount() {
@@ -31,6 +32,20 @@ export default class ExerciseList extends Component {
     const exercises = this.state.exercises;
     return (
       <>
+        <section className="muscle-group">
+          <h2>Muscle Group</h2>
+          <ul>
+            <li><button>Chest</button></li>
+            <li><button>Back</button></li>
+            <li><button>Quads</button></li>
+            <li><button>Hamstrings</button></li>
+            <li><button>Calves</button></li>
+            <li><button>Triceps</button></li>
+            <li><button>Biceps</button></li>
+            <li><button>Shoulders</button></li>
+            <li><button>Trps</button></li>
+          </ul>
+        </section>
         <section className='exercises'>
           <h2>All Exercises</h2>
           <ul>

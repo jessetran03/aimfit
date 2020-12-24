@@ -24,3 +24,8 @@ header {
   margin: 10px;
   border-style: solid;
 }
+
+.muscle-group li {
+  display: inline;
+  margin-left: 3px;
+}

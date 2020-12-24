@@ -7,7 +7,6 @@ import Exercise from '../Exercise/Exercise'
 import WorkoutList from '../WorkoutList/WorkoutList'
 import WorkoutExerciseList from '../WorkoutExerciseList/WorkoutExerciseList'
 import AddExerciseList from '../AddExerciseList/AddExerciseList'
-import MuscleNav from '../MuscleNav/MuscleNav'
 import Nav from '../Nav/Nav'
 import Landing from '../Landing/Landing'
 
@@ -62,17 +61,6 @@ class App extends Component {
       </>
     )
   }
-
-  /*renderCategoryRoutes() {
-    return (
-      <>
-        <Route
-          path='/exercises'
-          component={MuscleNav}
-        />
-      </>
-    )
-  }*/
 
   render() {
     return (
