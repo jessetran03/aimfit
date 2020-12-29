@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../services/token-service'
+import './Landing.css'
 
 export default class Landing extends Component {
 
@@ -18,13 +19,13 @@ export default class Landing extends Component {
 
   render() {
     return (
-      <>
-        <h2>Welcome</h2>
+      <div className='landing'>
+        <h2>Aim to be Fit.</h2>
         <div>Get started!</div>
         {TokenService.hasAuthToken()
           ? this.renderLoggedIn()
           : this.renderLoggedOut()}
-      </>
+      </div>
     )
   }
 }

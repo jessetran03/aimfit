@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import config from '../config'
 import PropTypes from 'prop-types'
+import './Register.css'
 
 export default class Register extends Component {
   state = {
@@ -48,16 +49,13 @@ export default class Register extends Component {
     const { error } = this.state
     return (
       <>
-        <section className="muscle-group">
-          <h2>Strive to be great. Aim to be fit.</h2>
-        </section>
-        <form onSubmit={this.handleRegister} className="exercises">
-          <h2>Register</h2>
+        <form onSubmit={this.handleRegister} className="sign-form">
+          <h2>Sign up</h2>
           <div role='alert'>
-            {error && <p className='red'>{error}</p>}
+            {error && <p className='form-error'>{error}</p>}
           </div>
-          <label htmlFor='full-name-input'>
-            Full name:
+          <label htmlFor='full-name-input' className='full-name-label'>
+            Full Name:
           </label>
           <input type='text' id='full-name-input' name='full-name' />
           <br />
@@ -66,7 +64,7 @@ export default class Register extends Component {
           </label>
           <input type='text' id='username-input' name='username' />
           <br /><br />
-          <label htmlFor='password-input'>
+          <label htmlFor='password-input' className='password-label'>
             Password:
           </label>
           <input type='password' id='password-input' name='password' />

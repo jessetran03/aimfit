@@ -1,0 +1,28 @@
+.sign-form h2 {
+  margin-bottom: 10px;
+}
+
+.sign-form button {
+  margin: 15px 5px 5px 0;
+}
+
+.sign-form label, input, select {
+  display: inline-block;
+}
+
+.sign-form label {
+  margin-right: 10px;
+}
+
+.form-error {
+  font-size: 15px;
+  color: rgb(190, 0, 0);
+}
+
+.password-label {
+  margin-left: 5px;
+}
+
+.full-name-label {
+  margin-left: 3px;
+}

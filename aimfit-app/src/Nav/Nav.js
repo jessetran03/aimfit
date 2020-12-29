@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import TokenService from '../services/token-service'
+import './Nav.css'
 
 export default class Nav extends Component {
   handleLogoutClick = () => {
@@ -10,12 +11,14 @@ export default class Nav extends Component {
   renderLoggedIn() {
     return (
       <>
+        <NavLink activeClassName='is-active' to ='/'>
+          <span>Home</span>
+        </NavLink>
+        <NavLink activeClassName='is-active' to='/workouts'>
+          <span>Workouts</span>
+        </NavLink>
         <Link onClick={this.handleLogoutClick} to='/'>
-          Logout
-        </Link>
-        &nbsp;
-        <Link to='/workouts'>
-          Workouts
+          <button>Logout</button>
         </Link>
       </>
     )
@@ -24,13 +27,13 @@ export default class Nav extends Component {
   renderLoggedOut() {
     return (
       <>
-        <Link to='/login'>
-          Login
-        </Link>
+        <NavLink activeClassName='is-active' to='/login'>
+          <button>Log in</button>
+        </NavLink>
         &nbsp;
-        <Link to='/register'>
-          Register
-        </Link>
+        <NavLink activeClassName='is-active' to='/register'>
+          <button className='sign-up-button'>Sign Up</button>
+        </NavLink>
       </>
     )
   }
@@ -39,10 +42,17 @@ export default class Nav extends Component {
   render() {
     return (
       <>
-        {TokenService.hasAuthToken()
-          ? this.renderLoggedIn()
-          : this.renderLoggedOut()
-        }
+        <div className="nav-header">
+          <Link to="/">
+            <h3>AimFit</h3>
+          </Link>
+        </div>
+        <div className="nav-links">
+          {TokenService.hasAuthToken()
+            ? this.renderLoggedIn()
+            : this.renderLoggedOut()
+          }
+        </div>
       </>
     )
   }

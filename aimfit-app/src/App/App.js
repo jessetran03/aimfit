@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import Login from '../Login/Login'
 import Register from '../Register/Register'
-import ExerciseList from '../ExerciseList/ExerciseList'
 import Exercise from '../Exercise/Exercise'
 import WorkoutList from '../WorkoutList/WorkoutList'
 import WorkoutExerciseList from '../WorkoutExerciseList/WorkoutExerciseList'
 import AddExerciseList from '../AddExerciseList/AddExerciseList'
 import Nav from '../Nav/Nav'
 import Landing from '../Landing/Landing'
+import './App.css'
 
 class App extends Component {
   state = {}
@@ -31,28 +31,24 @@ class App extends Component {
           component={Register}
         />
         <Route
-          path='/exercises'
-          component={ExerciseList}
-        />
-        <Route
           exact
           path='/workouts'
           component={WorkoutList}
         />
         {['/workouts/:workoutId'].map(path =>
-        <Route
-          exact
-          key={path}
-          path={path}
-          component={WorkoutExerciseList}
-        />
+          <Route
+            exact
+            key={path}
+            path={path}
+            component={WorkoutExerciseList}
+          />
         )}
         {['/workouts/:workoutId/exercises'].map(path =>
-        <Route
-          key={path}
-          path={path}
-          component={AddExerciseList}
-        />
+          <Route
+            key={path}
+            path={path}
+            component={AddExerciseList}
+          />
         )}
         <Route
           path='/exercise'
@@ -66,16 +62,11 @@ class App extends Component {
     return (
       <>
         <nav>
-        <Route
-          path='/'
-          component={Nav}
-        />
+          <Route
+            path='/'
+            component={Nav}
+          />
         </nav>
-        <header>
-          <Link to="/">
-            <h1>AimFit</h1>
-          </Link>
-        </header>
         <main>
           {this.renderMainRoutes()}
         </main>

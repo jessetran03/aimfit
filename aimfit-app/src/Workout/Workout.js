@@ -39,7 +39,7 @@ export default class Workout extends Component {
     const { id, title, day } = this.props
     return (
       <>
-        <section className='exercises'>
+        <section className='workout'>
           <Link to={`/workouts/${id}`}>
             <h3>{title}</h3>
           </Link>

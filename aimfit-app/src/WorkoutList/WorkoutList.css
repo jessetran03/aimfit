@@ -1,26 +1,41 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: sans-serif;
-  font-size: 20px;
-  text-align: center;
-}
-
-header {
-  padding: 20px;
-  background-color: #AAAAAA;
-}
-
-h3 {
-  background-color: #FFFFFF;
-}
-
 .workouts li {
-  background-color: #FFFFFF;
+  background-image: radial-gradient(#FFFFFF, #aab5be);
   padding: 15px 0;
   margin: 10px;
-  border-style: solid;
+  border-radius: 30px;
+  border: 3px solid #000000;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  list-style-type: none;
+}
+
+.workout-name-input {
+  margin-right: 20px;
+}
+
+.add-workout-form {
+  margin-top: 20px;
+}
+
+.add-workout-form button {
+  margin-top: 15px;
+}
+
+.add-workout-form input {
+  width: 150px;
+}
+
+.add-workout-form select {
+  width: 154px;
+}
+
+.add-workout-form label {
+  margin-right: 8px;
+}
+
+@media all and (min-width: 600px) {
+  .add-workout-form label {
+    width: 10%;
+  }
 }

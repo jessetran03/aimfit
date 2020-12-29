@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 export default class WorkoutExercise extends Component {
   static defaultProps = {
-    getWorkoutExercises: () => {},
+    getWorkoutExercises: () => { },
   }
   static propTypes = {
     getWorkoutExercise: PropTypes.func,
@@ -27,14 +27,14 @@ export default class WorkoutExercise extends Component {
         this.props.getWorkoutExercises()
       })
       .catch(error => {
-        console.error({ error})
+        console.error({ error })
       })
   }
 
   render() {
     const { name } = this.props
     return (
-      <>
+      <section className='exercise'>
         <h3>{name}</h3>
         <button
           type='button'
@@ -42,7 +42,7 @@ export default class WorkoutExercise extends Component {
         >
           Delete
         </button>
-      </>
+      </section>
     )
   }
 }

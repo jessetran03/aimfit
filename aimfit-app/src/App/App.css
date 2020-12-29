@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+  background-color: rgb(150, 150, 155);
+}
+
+button {
+  padding: 3px;
+  border-radius: 5px;
+  background-color: rgb(210, 230, 245);
+  font-weight: 900;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FFFFFF;
+}
+
+a:link {
+  text-decoration: none;
+  color: rgb(21, 26, 29);
+}
+
+a:visited {
+  text-decoration: none;
+  color: rgb(21, 26, 29);
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #327ed6;
+}
+
+a:active {
+  text-decoration: underline;
+}

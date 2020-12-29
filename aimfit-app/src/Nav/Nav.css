@@ -1,0 +1,51 @@
+nav {
+  display: flex;
+  padding: 20px;
+  margin: 0 0 10px 0;
+  background-color: rgb(131, 148, 164);
+  box-shadow: 0 5px 5px rgb(100, 100, 100);
+  justify-content: space-between;
+}
+
+.nav-header h3 {
+  font-size: 30px;
+  font-weight: 800
+}
+
+.nav-header a:link {
+  text-decoration: none;
+  color: rgb(21, 26, 29);
+}
+
+nav span {
+  margin-right: 15px;
+}
+
+nav button {
+  padding: 8px;
+}
+
+.sign-up-button {
+  background-color: rgb(21, 26, 29);
+  color: #FFFFFF
+}
+
+.sign-up-button:hover {
+  background-color: rgb(51, 80, 100);
+}
+
+.is-active {
+  text-decoration: underline;
+  color: #FFFFFF;
+}
+
+
+@media all and (min-width: 1200px) {
+  .nav-header {
+    margin-left: 300px;
+  }
+
+  .nav-links {
+    margin-right: 300px;
+  }
+}

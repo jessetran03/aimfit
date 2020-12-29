@@ -72,13 +72,13 @@ export default class WorkoutExerciseList extends Component {
     const path = this.props.location.pathname + '/exercises'
     return (
       <>
-        <section className='exercises'>
+        <section className='workouts'>
+          <h2>{workout.title}</h2>
           <button
             onClick={this.handleClickBack}
           >
             Back
           </button>
-          <h2>{workout.title}</h2>
           <ul>
             {exercises.map(exercise => (
               <li

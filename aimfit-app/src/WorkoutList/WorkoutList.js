@@ -80,14 +80,19 @@ export default class WorkoutList extends Component {
               </li>
             ))}
           </ul>
-          <form onSubmit={this.handleAddWorkout}>
-            <label htmlFor='workout-name-input'>
-              Name of workout: &nbsp;
+          <form onSubmit={this.handleAddWorkout} className="add-workout-form">
+            <label htmlFor='workout-name-input' className='workout-name-label'>
+              Workout Name:
             </label>
-            <input type='text' id='workout-name-input' name='workout-name' required />
+            <input
+              className='workout-name-input'
+              type='text'
+              id='workout-name-input'
+              name='workout-name'
+              required />
             <br />
             <label htmlFor='workout-day-input'>
-              Day of week: &nbsp;
+              Day of Week:
             </label>
             <select id='workout-day-select' name='workout-day'>
               <option value='Sunday'>Sunday</option>

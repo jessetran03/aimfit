@@ -1,31 +1,25 @@
-* {
-  margin: 0;
-  padding: 0;
+.add-exercise-header {
+  margin: 10px 0;
 }
 
-body {
-  font-family: sans-serif;
-  font-size: 20px;
-  text-align: center;
+.muscle-header {
+  margin-bottom: 5px;
 }
 
-header {
-  padding: 20px;
-  background-color: #AAAAAA;
-}
-
-.exercises {
-  background-color: #AAAAAA;
-}
-
-.exercises li {
-  background-color: #FFFFFF;
-  padding: 15px 0;
-  margin: 10px;
-  border-style: solid;
+.muscle-group {
+  margin: 15px 0;
 }
 
 .muscle-group li {
   display: inline;
   margin-left: 3px;
+}
+
+.muscle-group button {
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.selected {
+  background-color: #FFFFFF;
 }

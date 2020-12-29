@@ -53,24 +53,21 @@ export default class Login extends Component {
     const { error } = this.state
     return (
       <>
-        <section className="muscle-group">
-          <h2>Strive to be great. Aim to be fit.</h2>
-        </section>
         <section className="exercises">
             <h2>Get started.</h2>
         </section>
 
-        <form onSubmit={this.handleLogin} className="exercises">
+        <form onSubmit={this.handleLogin} className="sign-form">
           <h2>Sign in</h2>
           <div>
-            {error && <p className='error'>{error}</p>}
+            {error && <p className='form-error'>{error}</p>}
           </div>
           <label htmlFor='username-input'>
             Username:
           </label>
           <input type='text' id='username-input' name='username' />
           <br />
-          <label htmlFor='password-input'>
+          <label htmlFor='password-input' className='password-label'>
             Password:
           </label>
           <input type='password' id='password-input' name='password' />
@@ -81,7 +78,7 @@ export default class Login extends Component {
             Log in
           </button>
           <Link to='/register'>
-            <button>Register</button>
+            <button className='sign-up-button'>Sign Up</button>
           </Link>
         </form>
       </>
