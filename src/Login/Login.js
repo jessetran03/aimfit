@@ -39,8 +39,6 @@ export default class Login extends Component {
         return res.json()
       })
       .then(res => {
-        //user_name.value = ''
-        //password.value = ''
         TokenService.saveAuthToken(res.authToken)
         this.handleLoginSuccess()
       })
