@@ -34,7 +34,7 @@ export default class WorkoutExercise extends Component {
   render() {
     const { name } = this.props
     return (
-      <section className='exercise'>
+      <section className='workout-exercise'>
         <h3>{name}</h3>
         <button
           type='button'

@@ -1,5 +1,26 @@
-.landing{
+.landing {
   background-image: url("./aimfit-landing.jpg");
   background-size: cover;
   padding: 200px 0;
+}
+
+.landing h2 {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.landing p {
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.get-started-link, .get-started-link:visited, .get-started-link h3 {
+  font-size: 25px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: rgb(56, 79, 94);
+}
+
+.get-started-link:hover {
+  color: #327ed6;
 }

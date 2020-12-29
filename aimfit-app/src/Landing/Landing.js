@@ -7,13 +7,13 @@ export default class Landing extends Component {
 
   renderLoggedOut() {
     return(
-      <div>Log in <Link to="/login">here</Link>!</div>
+      <div><Link to="/register"><h3 className='get-started-link'>Sign Up</h3></Link></div>
     )
   }
 
   renderLoggedIn() {
     return(
-      <div><Link to="/workouts">Go to your workouts!</Link></div>
+      <div><Link to="/workouts"><h3 className='get-started-link'>Get Started!</h3></Link></div>
     )
   }
 
@@ -21,7 +21,7 @@ export default class Landing extends Component {
     return (
       <div className='landing'>
         <h2>Aim to be Fit.</h2>
-        <div>Get started!</div>
+        <p>Create workout plans to help reach your goals.</p>
         {TokenService.hasAuthToken()
           ? this.renderLoggedIn()
           : this.renderLoggedOut()}
