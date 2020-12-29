@@ -3,13 +3,6 @@
 exports[`render Login without data 1`] = `
 Array [
   <section
-    className="muscle-group"
-  >
-    <h2>
-      Strive to be great. Aim to be fit.
-    </h2>
-  </section>,
-  <section
     className="exercises"
   >
     <h2>
@@ -17,7 +10,7 @@ Array [
     </h2>
   </section>,
   <form
-    className="exercises"
+    className="sign-form"
     onSubmit={[Function]}
   >
     <h2>
@@ -36,6 +29,7 @@ Array [
     />
     <br />
     <label
+      className="password-label"
       htmlFor="password-input"
     >
       Password:
@@ -55,8 +49,10 @@ Array [
       href="/register"
       onClick={[Function]}
     >
-      <button>
-        Register
+      <button
+        className="sign-up-button"
+      >
+        Sign Up
       </button>
     </a>
   </form>,

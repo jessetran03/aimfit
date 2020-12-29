@@ -9,14 +9,17 @@ exports[`render WorkoutList without data 1`] = `
   </h2>
   <ul />
   <form
+    className="add-workout-form"
     onSubmit={[Function]}
   >
     <label
+      className="workout-name-label"
       htmlFor="workout-name-input"
     >
-      Name of workout:  
+      Workout Name:
     </label>
     <input
+      className="workout-name-input"
       id="workout-name-input"
       name="workout-name"
       required={true}
@@ -26,7 +29,7 @@ exports[`render WorkoutList without data 1`] = `
     <label
       htmlFor="workout-day-input"
     >
-      Day of week:  
+      Day of Week:
     </label>
     <select
       id="workout-day-select"

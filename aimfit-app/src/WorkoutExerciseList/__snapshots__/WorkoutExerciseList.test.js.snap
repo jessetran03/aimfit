@@ -2,14 +2,14 @@
 
 exports[`render WorkoutExerciseList without data 1`] = `
 <section
-  className="exercises"
+  className="workouts"
 >
+  <h2 />
   <button
     onClick={[Function]}
   >
     Back
   </button>
-  <h2 />
   <ul />
   <a
     href="/[object Object]/exercises"

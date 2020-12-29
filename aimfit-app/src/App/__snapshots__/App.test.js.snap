@@ -3,46 +3,64 @@
 exports[`render App without data 1`] = `
 Array [
   <nav>
-    <a
-      href="/login"
-      onClick={[Function]}
+    <div
+      className="nav-header"
     >
-      Login
-    </a>
-     
-    <a
-      href="/register"
-      onClick={[Function]}
-    >
-      Register
-    </a>
-  </nav>,
-  <header>
-    <a
-      href="/"
-      onClick={[Function]}
-    >
-      <h1>
-        AimFit
-      </h1>
-    </a>
-  </header>,
-  <main>
-    <h2>
-      Welcome
-    </h2>
-    <div>
-      Get started!
-    </div>
-    <div>
-      Log in 
       <a
+        href="/"
+        onClick={[Function]}
+      >
+        <h3>
+          AimFit
+        </h3>
+      </a>
+    </div>
+    <div
+      className="nav-links"
+    >
+      <a
+        aria-current={null}
         href="/login"
         onClick={[Function]}
       >
-        here
+        <button>
+          Log in
+        </button>
       </a>
-      !
+       
+      <a
+        aria-current={null}
+        href="/register"
+        onClick={[Function]}
+      >
+        <button
+          className="sign-up-button"
+        >
+          Sign Up
+        </button>
+      </a>
+    </div>
+  </nav>,
+  <main>
+    <div
+      className="landing"
+    >
+      <h2>
+        Aim to be Fit.
+      </h2>
+      <div>
+        Get started!
+      </div>
+      <div>
+        Log in 
+        <a
+          href="/login"
+          onClick={[Function]}
+        >
+          here
+        </a>
+        !
+      </div>
     </div>
   </main>,
 ]

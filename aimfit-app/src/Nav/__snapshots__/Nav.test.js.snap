@@ -2,18 +2,42 @@
 
 exports[`render Nav without data 1`] = `
 Array [
-  <a
-    href="/login"
-    onClick={[Function]}
+  <div
+    className="nav-header"
   >
-    Login
-  </a>,
-  " ",
-  <a
-    href="/register"
-    onClick={[Function]}
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <h3>
+        AimFit
+      </h3>
+    </a>
+  </div>,
+  <div
+    className="nav-links"
   >
-    Register
-  </a>,
+    <a
+      aria-current={null}
+      href="/login"
+      onClick={[Function]}
+    >
+      <button>
+        Log in
+      </button>
+    </a>
+     
+    <a
+      aria-current={null}
+      href="/register"
+      onClick={[Function]}
+    >
+      <button
+        className="sign-up-button"
+      >
+        Sign Up
+      </button>
+    </a>
+  </div>,
 ]
 `;

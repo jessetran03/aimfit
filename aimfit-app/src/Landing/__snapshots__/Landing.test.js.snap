@@ -1,13 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render Landing without data 1`] = `
-Array [
+<div
+  className="landing"
+>
   <h2>
-    Welcome
-  </h2>,
+    Aim to be Fit.
+  </h2>
   <div>
     Get started!
-  </div>,
+  </div>
   <div>
     Log in 
     <a
@@ -17,6 +19,6 @@ Array [
       here
     </a>
     !
-  </div>,
-]
+  </div>
+</div>
 `;
