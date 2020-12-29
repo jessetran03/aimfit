@@ -7,18 +7,20 @@ exports[`render Landing without data 1`] = `
   <h2>
     Aim to be Fit.
   </h2>
+  <p>
+    Create workout plans to help reach your goals.
+  </p>
   <div>
-    Get started!
-  </div>
-  <div>
-    Log in 
     <a
-      href="/login"
+      href="/register"
       onClick={[Function]}
     >
-      here
+      <h3
+        className="get-started-link"
+      >
+        Sign Up
+      </h3>
     </a>
-    !
   </div>
 </div>
 `;
