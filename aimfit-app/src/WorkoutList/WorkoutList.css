@@ -1,12 +1,14 @@
+.workouts {
+  margin-top: 20px;
+}
+
 .workouts li {
   background-image: radial-gradient(#FFFFFF, #aab5be);
   padding: 15px 0;
-  margin: 10px;
+  margin: 10px auto;
   border-radius: 30px;
   border: 3px solid #000000;
   max-width: 450px;
-  margin-left: auto;
-  margin-right: auto;
   list-style-type: none;
 }
 
