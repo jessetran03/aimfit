@@ -53,7 +53,7 @@ export default class Login extends Component {
     const { error } = this.state
     return (
       <>
-        <form onSubmit={this.handleLogin} className="sign-form">
+        <form onSubmit={this.handleLogin} className='sign-form'>
           <h2>Sign in</h2>
           <div>
             {error && <p className='form-error'>{error}</p>}

@@ -49,7 +49,7 @@ export default class Register extends Component {
     const { error } = this.state
     return (
       <>
-        <form onSubmit={this.handleRegister} className="sign-form">
+        <form onSubmit={this.handleRegister} className='sign-form'>
           <h2>Sign up</h2>
           <div role='alert'>
             {error && <p className='form-error'>{error}</p>}

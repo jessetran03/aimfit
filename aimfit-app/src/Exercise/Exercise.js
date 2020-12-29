@@ -9,7 +9,7 @@ export default class Exercise extends Component {
         <section className='exercises'>
           <h2>Flat Bench Press</h2>
         </section>
-        <section class="exercises">
+        <section class='exercises'>
           <label>Weight:</label>
           <input />
           <br />

@@ -64,7 +64,7 @@ export default class WorkoutList extends Component {
     const workouts = this.state.workouts;
     return (
       <>
-        <section className="workouts">
+        <section className='workouts'>
           <h2>Workout List</h2>
           <ul>
             {workouts.map(workout => (
@@ -80,7 +80,7 @@ export default class WorkoutList extends Component {
               </li>
             ))}
           </ul>
-          <form onSubmit={this.handleAddWorkout} className="add-workout-form">
+          <form onSubmit={this.handleAddWorkout} className='add-workout-form'>
             <label htmlFor='workout-name-input' className='workout-name-label'>
               Workout Name:
             </label>
@@ -105,8 +105,8 @@ export default class WorkoutList extends Component {
             </select>
             <br />
             <button
-              type="submit"
-              className="List-add-button"
+              type='submit'
+              className='List-add-button'
             >
               + Add Workout
             </button>

@@ -58,7 +58,7 @@ export default class AddExerciseList extends Component {
         >
           Back
           </button>
-        <section className="muscle-group">
+        <section className='muscle-group'>
           <h3 className='muscle-header'>Muscle Group</h3>
           <ul>
             {muscles.map(muscle => (

@@ -27,7 +27,6 @@ Array [
           Log in
         </button>
       </a>
-       
       <a
         aria-current={null}
         href="/register"
@@ -39,6 +38,12 @@ Array [
           Sign Up
         </button>
       </a>
+      <button
+        className="sign-up-button"
+        onClick={[Function]}
+      >
+        Demo
+      </button>
     </div>
   </nav>,
   <main>
@@ -49,7 +54,7 @@ Array [
         Aim to be Fit.
       </h2>
       <p>
-        Create workout plans to help reach your goals.
+        Create workout plans to help achieve your goals.
       </p>
       <div>
         <a

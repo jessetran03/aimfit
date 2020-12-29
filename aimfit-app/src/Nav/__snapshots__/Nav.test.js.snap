@@ -26,7 +26,6 @@ Array [
         Log in
       </button>
     </a>
-     
     <a
       aria-current={null}
       href="/register"
@@ -38,6 +37,12 @@ Array [
         Sign Up
       </button>
     </a>
+    <button
+      className="sign-up-button"
+      onClick={[Function]}
+    >
+      Demo
+    </button>
   </div>,
 ]
 `;

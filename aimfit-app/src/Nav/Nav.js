@@ -2,11 +2,46 @@ import React, { Component } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import TokenService from '../services/token-service'
 import './Nav.css'
+import config from '../config'
 
 export default class Nav extends Component {
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
   }
+
+  handleLoginSuccess = () => {
+    const { location, history } = this.props
+    const destination = (location.state || {}).from || '/'
+    history.push(destination)
+  }
+
+  handleDemo = e => {
+    e.preventDefault()
+    this.setState({ error: null })
+    const login = {
+      user_name: 'dunder_mifflin',
+      password: 'Password1!',
+    }
+    fetch(`${config.API_ENDPOINT}/auth/login`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(login),
+    })
+      .then(res => {
+        if (!res.ok)
+          return res.json().then(e => Promise.reject(e))
+        return res.json()
+      })
+      .then(res => {
+        TokenService.saveAuthToken(res.authToken)
+        this.handleLoginSuccess()
+      })
+      .catch(res => {
+        this.setState({ error: res.error })
+      })
+  };
 
   renderLoggedIn() {
     return (
@@ -30,10 +65,10 @@ export default class Nav extends Component {
         <NavLink activeClassName='is-active' to='/login'>
           <button>Log in</button>
         </NavLink>
-        &nbsp;
         <NavLink activeClassName='is-active' to='/register'>
           <button className='sign-up-button'>Sign Up</button>
         </NavLink>
+        <button onClick={this.handleDemo} className='sign-up-button'>Demo</button>
       </>
     )
   }
@@ -42,12 +77,12 @@ export default class Nav extends Component {
   render() {
     return (
       <>
-        <div className="nav-header">
-          <Link to="/">
+        <div className='nav-header'>
+          <Link to='/'>
             <h3>AimFit</h3>
           </Link>
         </div>
-        <div className="nav-links">
+        <div className='nav-links'>
           {TokenService.hasAuthToken()
             ? this.renderLoggedIn()
             : this.renderLoggedOut()
