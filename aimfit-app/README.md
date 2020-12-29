@@ -1,22 +1,20 @@
 # AimFit
-========
  * * *
  
 
  ## Live
- -------
- * * *
+ --------------
 
 [https://aimfit-app.vercel.app/](https://aimfit-app.vercel.app/)
 
 ## Summary
- ----------
+ --------------
 
  AimFit is a web application that helps you to reach your fitness goals. The application allows the user to create their own workouts and customize the workouts to their needs. The user can also assign a day to each workout to help them organize their weekly workout plan.
 
 
  ## Screenshots
- ----------
+  --------------
  Landing Page:
  ![Landing](images/landing-page.jpg)
 
@@ -34,8 +32,7 @@
 
 
  ## Technologies Used
- ------
- * * *
+ --------------
 
  1. JavaScript
  2. React
