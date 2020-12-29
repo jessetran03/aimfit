@@ -7,7 +7,7 @@
 
 Demo: [https://aimfit-app.vercel.app/](https://aimfit-app.vercel.app/) </br>
 Client Repo: [https://github.com/jessetran03/aimfit](https://github.com/jessetran03/aimfit) </br>
-Server Repo: [https://github.com/jessetran03/aimfit-api](https:/github.com/jessetran03/aimfit-api)
+Server Repo: [https://github.com/jessetran03/aimfit-api](https://github.com/jessetran03/aimfit-api)
 
 ## Summary
  --------------
