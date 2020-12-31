@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render ExerciseLog without data 1`] = `
+<section
+  className="workouts"
+>
+  <button
+    onClick={[Function]}
+  >
+    Back
+  </button>
+  <h2
+    className="log-header"
+  />
+  <form
+    className="add-entry-form"
+    onSubmit={[Function]}
+  >
+    <label
+      className="entry-set-count-label"
+      htmlFor="entry-set-count-input"
+    >
+      Set x Rep:
+    </label>
+    <input
+      className="entry-set-count-input"
+      id="entry-set-count-input"
+      min="0"
+      name="entry-set-count"
+      required={true}
+      type="number"
+    />
+     x
+    <input
+      className="entry-rep-count-input"
+      id="entry-rep-count-input"
+      min="0"
+      name="entry-rep-count"
+      required={true}
+      type="number"
+    />
+    <br />
+    <label
+      htmlFor="entry-weight-count-input"
+    >
+      Weight:
+    </label>
+    <input
+      className="entry-weight-count-input"
+      id="entry-weight-count-input"
+      min="0"
+      name="entry-weight-count"
+      type="number"
+    />
+    <br />
+    <button
+      className="List-add-button"
+      type="submit"
+    >
+      + Add Entry
+    </button>
+  </form>
+  <ul />
+</section>
+`;
