@@ -21,7 +21,7 @@ export default class Landing extends Component {
     return (
       <div className='landing'>
         <h2>Aim to be Fit.</h2>
-        <p>Create workout plans to help achieve your goals.</p>
+        <p>Create workout plan and track exercises to help achieve your goals.</p>
         {TokenService.hasAuthToken()
           ? this.renderLoggedIn()
           : this.renderLoggedOut()}
