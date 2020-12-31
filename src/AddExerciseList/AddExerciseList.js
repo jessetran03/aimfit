@@ -3,6 +3,10 @@ import './AddExerciseList.css'
 import AddExercise from './AddExercise'
 import config from '../config'
 export default class AddExerciseList extends Component {
+  static defaultProps = {
+    match: { params: {} },
+    location: { pathname: {} }
+  }
   state = {
     exercises: [],
     muscle: 'Chest'
