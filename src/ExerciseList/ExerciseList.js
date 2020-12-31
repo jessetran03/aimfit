@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import './AddExerciseList.css'
-import AddExercise from './AddExercise'
+import './ExerciseList.css'
+import Exercise from './Exercise'
 import config from '../config'
-export default class AddExerciseList extends Component {
+export default class ExerciseList extends Component {
   state = {
     exercises: [],
     muscle: 'Chest'
@@ -52,7 +52,7 @@ export default class AddExerciseList extends Component {
     const muscles = this.muscles;
     return (
       <>
-        <h2 className='add-exercise-header'>Add Exercise</h2>
+        <h2 className='add-exercise-header'>Exercises</h2>
         <button
           onClick={this.handleGoBack}
         >
@@ -77,7 +77,7 @@ export default class AddExerciseList extends Component {
             {exercises
               .filter(exercise => exercise.muscle === muscle)
               .map(exercise => (
-                <AddExercise
+                <Exercise
                   key={exercise.id}
                   id={exercise.id}
                   name={exercise.exercise_name}

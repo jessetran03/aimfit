@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import config from '../config'
 import TokenService from '../services/token-service'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 export default class Exercise extends Component {
-  static defaultProps = {
+  static propTypes = {
+    id: PropTypes.number,
+    name: PropTypes.string
   }
 
   handleAddExercise = e => {
@@ -35,16 +39,12 @@ export default class Exercise extends Component {
 
   render() {
     const { id, name } = this.props
+    const path = 'workouts/exercise_log/' + id
     return (
       <li key={id}>
-        <h3>{name}</h3>
-        <br />
-        <button
-          type='button'
-          onClick={this.handleAddExercise}
-        >
-          Add to workout
-        </button>
+        <Link to={path}>
+          <h3>{name}</h3>
+        </Link>
       </li>
     )
   }

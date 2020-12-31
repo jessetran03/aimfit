@@ -1,0 +1,25 @@
+.add-exercise-header {
+  margin: 20px 0 10px 0;
+}
+
+.muscle-header {
+  margin-bottom: 5px;
+}
+
+.muscle-group {
+  margin: 15px 0;
+}
+
+.muscle-group li {
+  display: inline;
+  margin-left: 3px;
+}
+
+.muscle-group button {
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.selected {
+  background-color: #FFFFFF;
+}

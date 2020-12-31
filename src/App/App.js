@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import Login from '../Login/Login'
 import Register from '../Register/Register'
-import Exercise from '../Exercise/Exercise'
+import ExerciseList from '../ExerciseList/ExerciseList'
 import WorkoutList from '../WorkoutList/WorkoutList'
 import WorkoutExerciseList from '../WorkoutExerciseList/WorkoutExerciseList'
 import AddExerciseList from '../AddExerciseList/AddExerciseList'
@@ -36,6 +36,11 @@ class App extends Component {
           path='/workouts'
           component={WorkoutList}
         />
+        <Route
+          exact
+          path='/exercises'
+          component={ExerciseList}
+        />
         {['/workouts/:workoutId'].map(path =>
           <Route
             exact
@@ -51,10 +56,6 @@ class App extends Component {
             component={AddExerciseList}
           />
         )}
-        <Route
-          path='/exercise'
-          component={Exercise}
-        />
         {['/workouts/exercise_log/:exercise_id'].map(path =>
           <Route
             key={path}

@@ -52,6 +52,9 @@ export default class Nav extends Component {
         <NavLink activeClassName='is-active' to='/workouts'>
           <span>Workouts</span>
         </NavLink>
+        <NavLink activeClassName='is-active' to='/exercises'>
+          <span>Exercises</span>
+        </NavLink>
         <Link onClick={this.handleLogoutClick} to='/'>
           <button>Logout</button>
         </Link>
