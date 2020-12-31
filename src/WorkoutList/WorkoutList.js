@@ -54,6 +54,8 @@ export default class WorkoutList extends Component {
       })
       .then(workout => {
         this.getData()
+        e.target['workout-name'].value = ''
+        e.target['workout-day'].value = 'Sunday'
       })
       .catch(error => {
         console.error({ error })

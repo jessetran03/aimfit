@@ -1,0 +1,33 @@
+.log-header {
+  margin-top: 20px;
+}
+
+.add-entry-form {
+  margin: 25px;
+}
+
+.add-entry-form input {
+  margin-left: 7px;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.add-entry-form label {
+  font-weight: 600;
+}
+
+.entry-rep-count-input, .entry-set-count-input {
+  width: 35px;
+  margin-bottom: 5px;
+}
+
+.entry-rep-count-input {
+  margin-right: 21px;
+}
+
+.entry-weight-count-input {
+  width: 102px;
+  margin-bottom: 10px;
+}

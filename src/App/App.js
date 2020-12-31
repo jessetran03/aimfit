@@ -8,6 +8,7 @@ import WorkoutExerciseList from '../WorkoutExerciseList/WorkoutExerciseList'
 import AddExerciseList from '../AddExerciseList/AddExerciseList'
 import Nav from '../Nav/Nav'
 import Landing from '../Landing/Landing'
+import ExerciseLog from '../ExerciseLog/ExerciseLog'
 import './App.css'
 
 class App extends Component {
@@ -54,6 +55,13 @@ class App extends Component {
           path='/exercise'
           component={Exercise}
         />
+        {['/workouts/exercise_log/:exercise_id'].map(path =>
+          <Route
+            key={path}
+            path={path}
+            component={ExerciseLog}
+          />
+        )}
       </>
     )
   }

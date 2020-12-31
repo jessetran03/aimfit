@@ -63,8 +63,8 @@ export default class AddExerciseList extends Component {
           <ul>
             {muscles.map(muscle => (
               (muscle === this.state.muscle
-                ? <li><button className='selected' onClick={this.filterMuscle} value={muscle}>{muscle}</button></li>
-                : <li><button onClick={this.filterMuscle} value={muscle}>{muscle}</button></li>
+                ? <li key={muscle}><button className='selected' onClick={this.filterMuscle} value={muscle}>{muscle}</button></li>
+                : <li key={muscle}><button onClick={this.filterMuscle} value={muscle}>{muscle}</button></li>
               )
             ))}
           </ul>

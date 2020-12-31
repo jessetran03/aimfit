@@ -1,3 +1,7 @@
-.workout-exercise h3 {
+.workout-exercise h3, .workout-exercise p {
   margin-bottom: 10px;
+}
+
+.workout-exercise p {
+  font-weight: 500;
 }
