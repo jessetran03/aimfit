@@ -33,8 +33,8 @@ export default class WorkoutExercise extends Component {
   }
 
   render() {
-    const { name, id } = this.props
-    const path = 'exercise_log/' + id
+    const { name, exerciseId } = this.props
+    const path = 'exercise_log/' + exerciseId
     return (
       <section className='workout-exercise'>
         <Link to={path}>

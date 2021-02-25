@@ -8,7 +8,7 @@ exports[`render Landing without data 1`] = `
     Aim to be Fit.
   </h2>
   <p>
-    Create workout plan and track exercises to help achieve your goals.
+    Create a workout plan and track exercises to help achieve your goals.
   </p>
   <div>
     <a
